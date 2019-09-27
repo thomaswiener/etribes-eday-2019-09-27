@@ -6,8 +6,6 @@
 ```
 //in instance.tf
 
-variable "name" {}
-
 resource "aws_instance" "web" {
   ami           = "ami-067ee10914e74ffee"
   instance_type = "t2.micro"
