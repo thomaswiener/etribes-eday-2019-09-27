@@ -1,6 +1,6 @@
 ## Instance
 
-Create new instance.tf file
+#### Create new instance.tf file
 
 
 ```
@@ -14,7 +14,7 @@ resource "aws_instance" "web" {
 }
 ```
 
-Replace tags.Name with your name (alphanumeric)
+#### Replace tags.Name with your name (alphanumeric)
 
 ```
 $ terraform apply
@@ -22,11 +22,9 @@ $ terraform apply
 // Type yes when asked to do so
 ```
 
----
-
 Hint: Take a look into terraform.tfstate
 
-To Cleanup:
+#### Cleanup
 
 ```
 $ terraform destroy

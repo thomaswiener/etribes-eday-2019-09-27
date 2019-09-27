@@ -14,7 +14,7 @@ provider "aws" {
 }
 ```
 
-### Initialize provider
+#### Initialize provider
 
 ```
 $ terraform init
@@ -28,7 +28,7 @@ Initializing the backend...
 A new folder is created with provider libs in .terraform
 
 
-### Apply configuration
+#### Apply configuration
 
 ```
 $ terraform apply
@@ -39,7 +39,7 @@ Apply complete! Resources: 0 added, 0 changed, 0 destroyed.
 A new file is created: terraform.tfstate
 It contains information about resources created by terraform.
 
-### Show help
+#### Show help
 
 ```
 $ terraform help

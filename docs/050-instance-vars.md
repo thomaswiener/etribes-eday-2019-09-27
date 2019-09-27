@@ -8,7 +8,7 @@ ami  = "ami-067ee10914e74ffee"
 type = "t2.micro"
 ```
 
-Update base.tf
+#### Update base.tf
 ```
 //in base.tf
 
@@ -18,7 +18,7 @@ variable "type" {}
 ...
 ```
 
-Update instance.tf
+#### Update instance.tf
 ```
 //in instance.tf
 
@@ -32,7 +32,7 @@ resource "aws_instance" "web" {
 }
 ```
 
-Run terraform apply with prod vars
+#### Run terraform apply with prod vars
 ```
 $ terraform apply --var-file=prod.tfvars
 

@@ -1,12 +1,11 @@
 ## Instance HTTP
 
 There is a webserver running on port 80. Connect to it.
-
-Traffic is blocked! We need to create a new securty group and attach it to the instance.
+Traffic is blocked! We need to create a new security group and attach it to the instance.
 
 --- 
 
-1. Security Group
+#### Security Group
 
 Add additional security_group
 
@@ -33,7 +32,7 @@ resource "aws_security_group" "http" {
 }
 ```
 
-2. Attach Security Group and Key to Instance
+#### Attach Security Group and Key to Instance
 ```
 //in instance.tf
 
@@ -58,7 +57,7 @@ $ terraform apply --var-file=prod.tfvars
 // Type yes when asked to do so
 ```
 
-Cleanup
+#### Cleanup
 ```
  terraform destroy --var-file=prod.tfvars
 ```
