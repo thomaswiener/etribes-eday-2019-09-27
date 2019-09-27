@@ -17,6 +17,6 @@ resource "aws_instance" "web" {
   }
 }
 
-output "instance_ip" {
+output "instance_external_ip" {
   value = "${aws_instance.web.public_ip}"
 }

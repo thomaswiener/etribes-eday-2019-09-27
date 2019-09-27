@@ -2,18 +2,15 @@
 
 In order to connect via ssh to your instance, we need to setup a few things:
 
-1. Security Group
-All traffic is blocked by default. Allow port 22 inbound.
-
-2. SSH Key
-We need to set our public ssh key to login.
-
-3. Attach Security Group
-We need to attach the security group to the instance.
+1. Security Group: All traffic is blocked by default. Allow port 22 inbound.
+2. SSH Key: We need to set our public ssh key to login.
+3. Attach Security Group: We need to attach the security group to the instance.
+4. External IP: Determine IP after instance creation
 
 --- 
 
-1. Security Group
+
+#### Security Group
 
 Create security_group.tf
 
@@ -40,7 +37,7 @@ resource "aws_security_group" "ssh" {
 }
 ```
 
-2. SSH Key
+#### SSH Key
 
 ```
 //in instance.tf
@@ -51,7 +48,7 @@ resource "aws_key_pair" "developer" {
 }
 ```
 
-3. Attach Security Group and Key to Instance
+#### Attach Security Group and Key to Instance
 ```
 //in instance.tf
 
@@ -71,12 +68,12 @@ resource "aws_instance" "web" {
 
 ```
 
-4. Figure out the instance external ip
+#### Figure out the instance external ip
 
 ```
 //in instance.tf
 
-output "instance_ip" {
+output "instance_external_ip" {
   value = "${aws_instance.web.public_ip}"
 }
 ```
@@ -86,4 +83,21 @@ $ terraform apply --var-file=prod.tfvars
 
 // Type yes when asked to do so
 
+...
+Outputs:
+
+instance_ip = "0.0.0.0"
+
+```
+
+Login to instance
+
+```
+$ ssh ubuntu@{external-ip}
+
+```
+
+Get information about current resource stack
+```
+$ terraform show
 ```

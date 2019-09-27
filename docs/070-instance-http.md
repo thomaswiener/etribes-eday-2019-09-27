@@ -1,15 +1,8 @@
 ## Instance HTTP
 
+There is a webserver running on port 80. Connect to it.
 
-
-1. Security Group
-All traffic is blocked by default.
-
-2. SSH Key
-We need to set our public ssh key to login.
-
-3. Attach Security Group
-We need to attach the security group to the instance.
+Traffic is blocked! We need to create a new securty group and attach it to the instance.
 
 --- 
 
